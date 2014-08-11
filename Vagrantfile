@@ -79,6 +79,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     chef.run_list = [
         "recipe[gitbucket-cookbook::default]"
+        # "recipe[gitbucket-cookbook::run_on_tomcat8]"
     ]
   end
 end
