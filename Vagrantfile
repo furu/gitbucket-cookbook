@@ -75,11 +75,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, inline: "apt-get update"
 
   config.vm.provision :chef_solo do |chef|
-    chef.json = {}
-
-    chef.run_list = [
-        "recipe[gitbucket-cookbook::default]"
-        # "recipe[gitbucket-cookbook::run_on_tomcat8]"
-    ]
+    chef.add_recipe "gitbucket-cookbook"
   end
 end
